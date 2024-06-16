@@ -42,7 +42,7 @@ async def main(search_term: str) -> None:
         await run(playwright, search_term)
 
 def run_async_task(search_term: str):
-    loop = asyncio.new_event_loop()
+    loop = asyncio.ProactorEventLoop()
     asyncio.set_event_loop(loop)
     loop.run_until_complete(main(search_term))
 
