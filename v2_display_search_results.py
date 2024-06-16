@@ -2,6 +2,10 @@ import asyncio
 from playwright.async_api import Playwright, async_playwright, expect
 import os
 import streamlit as st
+
+os.system('playwright install')
+os.system('playwright install-deps')
+
 paragraphs=[]
 async def run(playwright: Playwright, search_term: str) -> None:
     global paragraphs
