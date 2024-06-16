@@ -26,18 +26,11 @@ async def run(playwright: Playwright, search_term: str) -> None:
 
     # sometimes my paragraphs.txt contains only 3 entries instead of the 41 entries it is supposed to contain
     # The issue you're encountering is likely due to the page not being fully loaded or the elements not being fully rendered when you attempt to retrieve the paragraphs. 
-    print('Is this printed 2222')
     await page.wait_for_load_state("networkidle")
 
     # Retrieve and print the text content of all paragraphs
     paragraphs = await page.locator('p').all_text_contents()
     
-    for paragraph in paragraphs:
-        print(paragraph)
-
-    with open('wikipedia/wiki_paragraphs.txt', 'w', encoding='utf-8') as f:
-        f.write('\n\n'.join(paragraphs))
-
     await context.close()
     await browser.close()
 
