@@ -56,5 +56,5 @@ if st.button('Search'):
             st.write(paragraphs[1])
             st.write(paragraphs[2])
             st.write(paragraphs[3])
-    else:
-        st.warning("Sorry, we couldn't find any information for the provided search term. 😕 Please try searching for something more generic.")
+        else:
+            st.warning("Sorry, we couldn't find any information for the provided search term. 😕 Please try searching for something more generic.")
