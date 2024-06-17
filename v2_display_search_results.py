@@ -51,10 +51,12 @@ if st.button('Search'):
     with st.spinner('Searching Wikipedia...'):
         run_async_task(search_term)
     if paragraphs:
-        if len(paragraphs)==3:
-            st.success("Here are the insights we found:")
+        st.success("Here are the insights we found:")
+        if len(paragraphs) > 1:
             st.write(paragraphs[1])
+        if len(paragraphs) > 2:
             st.write(paragraphs[2])
+        if len(paragraphs) > 3:
             st.write(paragraphs[3])
-        else:
-            st.warning("Sorry, we couldn't find any information for the provided search term. 😕 Please try searching for something more generic.")
+    else:
+        st.warning("Sorry, we couldn't find any information for the provided search term. 😕 Please try searching for something more generic.")
