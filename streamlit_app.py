@@ -12,6 +12,8 @@ def handle_search_and_display(search_term: str, chosenButton: str):
             st.write(paragraphs[3])
         else:
             st.warning("Sorry, we couldn't find any information for the provided search term. 😕 Please try searching for something more generic.")
+    else:
+        st.warning("Sorry, we couldn't find any information for the provided search term. 😕 Please try searching for something more generic.")
 
 # cols = st.columns([4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4])
 
