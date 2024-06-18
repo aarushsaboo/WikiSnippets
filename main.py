@@ -12,7 +12,7 @@ async def main(search_term: str, chosenButton: str) -> None:
         return paragraphs
 
 def run_async_task(search_term: str, chosenButton: str):
-    loop = asyncio.new_event_loop()
+    loop = asyncio.ProactorEventLoop()
     asyncio.set_event_loop(loop)
     paragraphs = loop.run_until_complete(main(search_term, chosenButton))
     return paragraphs
